@@ -1,0 +1,41 @@
+---
+---
+
+<div class="relative mb-8">
+  <input
+    type="text"
+    placeholder="Search [Ctrl/Cmd + K]"
+    class="px-4 py-2 w-64 border rounded-md dark:bg-gray-800 dark:border-gray-700"
+    id="search-bar"
+  />
+  <div id="search-results" class="absolute top-full left-0 mt-2 w-64 max-h-48 overflow-y-auto bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-md shadow-lg hidden">
+    <ul class="divide-y dark:divide-gray-700">
+      <li class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Search Result 1</li>
+      <li class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Search Result 2</li>
+      <li class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">Search Result 3</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const searchBar = document.getElementById('search-bar');
+  const searchResults = document.getElementById('search-results');
+
+  searchBar.addEventListener('focus', () => {
+    searchResults.classList.remove('hidden');
+  });
+
+  searchBar.addEventListener('blur', () => {
+    setTimeout(() => searchResults.classList.add('hidden'), 200);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      searchBar.focus();
+    }
+    if (e.key === 'Escape') {
+      searchBar.blur();
+    }
+  });
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repeating Pattern</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="controls">
+    <label for="tiltAngle">Tilt Angle (degrees):</label>
+    <input type="range" id="tiltAngle" min="-90" max="90" value="0">
+    <span id="tiltValue">0°</span>
+
+    <label for="distance">Distance Between Divs:</label>
+    <input type="range" id="distance" min="10" max="200" value="50">
+    <span id="distanceValue">50px</span>
+
+    <label for="curve">Curve Intensity:</label>
+    <input type="range" id="curve" min="0" max="100" value="0">
+    <span id="curveValue">0%</span>
+
+    <label for="lines">Show Lines:</label>
+    <input type="checkbox" id="lines" checked>
+  </div>
+
+  <div id="pattern-container"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
